@@ -1,0 +1,104 @@
+body {
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+.search-form {
+    box-sizing: border-box;
+    border-radius: 10px;
+    border:2px solid #858585;
+    padding: 0 20px;
+    font-size: 16px;
+    height: 2.5em;
+    width: 97%;
+}
+
+.header {
+    text-align: center;
+    position: absolute;
+    top: 110px;
+    left: 240px;
+    color:white;
+    font-size: 22px;
+    font-family: "Pacifico", cursive;
+}
+
+.container {
+    position: relative;
+    text-align: center;
+    border: 1px solid #000;
+    padding: 30px;
+    max-width: 700px;
+}
+
+.cities {
+    font-family: 'Nunito Sans', sans-serif;
+    color: grey;
+}
+
+.img-container{
+  text-align: center; 
+  margin-bottom: 10px;
+}
+
+button.current-location {
+    color: white;
+    background-color: black;
+    border-width: 0;
+    margin-left: -130px;
+    padding: 8px 20px;
+    font-size: 15px;
+    border-radius: 20px;
+}
+
+.location-data{
+    text-align: left;
+}
+
+.weather-data{
+    text-align: right;
+}
+
+h1 {
+    font-size: 48px;
+    font-family: "Pacifico", cursive;
+}
+
+h2{
+    margin-left: 10px;
+}
+h3 {
+    font-size: 44px;
+}
+
+.col {
+    text-align: center;
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+.row{
+    margin-bottom: 30px;
+}
+form{
+    margin-bottom: 30px;
+}
+
+
+.weather-emo {
+    font-size: 40px;
+}
+
+.radius-round {
+    display: block;
+    width: 100%;
+    height: calc(1.5em + .75rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+}
+
