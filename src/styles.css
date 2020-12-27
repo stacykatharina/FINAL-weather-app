@@ -2,6 +2,12 @@ body {
     font-family: 'Nunito Sans', sans-serif;
 }
 
+li {
+    list-style: none;
+    font-family: 'Nunito Sans', sans-serif;
+    color: grey;
+}
+
 .search-form {
     box-sizing: border-box;
     border-radius: 10px;
