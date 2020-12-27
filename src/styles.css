@@ -40,6 +40,10 @@ body {
   margin-bottom: 10px;
 }
 
+.footnote{
+    text-align: center;
+}
+
 button.current-location {
     color: white;
     background-color: black;
