@@ -19,8 +19,10 @@ li.innerHTML = `${day},  ${date} ${month} ${year}   ${hours}:${minutes} `;
 function search(event) {
   event.preventDefault();
   let cityElement = document.querySelector("#city");
+  let descriptionElement = document.querySelector ("description");
   let cityInput = document.querySelector("#city-input");
   cityElement.innerHTML = cityInput.value;
+  descriptionElement.innerHTML = response.data.weather[0].description;
 }
 
       function convertToFahrenheit(event) {
