@@ -5,7 +5,9 @@ body {
 li {
     list-style: none;
     font-family: 'Nunito Sans', sans-serif;
-    color: grey;
+    text-align: left;
+    line-height: 20px;
+    font-weight: 150px;
 }
 
 .search-form {
