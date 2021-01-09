@@ -11,7 +11,6 @@
       href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
       rel="stylesheet"
     />
-    <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,600;1,400&display=swap"
 srel="stylesheet">
   <title>Stacy's Weather App</title>
@@ -55,54 +54,45 @@ srel="stylesheet">
         </ul>
         </div>
       <div class="col">
-      <h3 class="weather-data">
-        <img src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png">
-           <a id = "temperature">31</a>
-           <a href="#" id="celsius-link">°C</a> |  <a href="#" id="fahrenheit-link">°F</a>
-          </h3>
-      <p class="weather-data">Precipitation: 59%
-        <br>
-        Wind: 3km/h</p>
-        <div class="btn-group" role="group" aria-label="Basic example">
-          <button type="button" class="btn btn-secondary">Today</button>
-          <button type="button" class="btn btn-secondary">Tomorrow</button>
-          <button type="button" class="btn btn-secondary">This Week</button>
+      <div class="weather-data">
+        <img 
+        src="http://openweathermap.org/img/wn/10d@2x.png"
+        id="icon"
+        alt="Clear">
+           <strong id = "temperature">26</strong>
+           <span class="units">
+          <a href="#" id="celsius-link">°C</a> |  <a href="#" id="fahrenheit-link">°F</a>
+        </span>
         </div>
+      <p class="weather-data">Humidity - <span id="humidity">80</span>%
+        <br>
+        <br>
+        Wind - <span id="wind">6</span> km/h</p>
+      </div>
+      <div class="btn-group" role="group" aria-label="Basic example">
+        <button type="button" class="btn btn-secondary">Today</button>
+        <button type="button" class="btn btn-secondary">Tomorrow</button>
+        <button type="button"a class="btn btn-secondary">This Week</button>
       </div>
     </div>
   <br>
-    <div class="row">
-      <div class="col"> 3pm </div>
-      <div class="col"> 6pm </div>
-      <div class="col"> 9pm </div>
-      <div class="col"> (+1) (12am) </div>
-      <div class="col"> (+1) (3am) </div>
-    </div>
-   <br>
-   <div class="row">
-      <div class="col weather-emo"> ⛅  </div>
-      <div class="col weather-emo"> ⛅ </div>
-      <div class="col weather-emo"> 🌧️ </div>
-      <div class="col weather-emo"> ☀️ </div>
-      <div class="col weather-emo"> 🌧️ </div>
-    </div>
-    <br>
-   <div class="row">
-    <div class="col"> 28°</div>
-    <div class="col"> 28°</div>
-    <div class="col"> 28° </div>
-    <div class="col"> 28° </div>
-    <div class="col"> 28°</div>
-    </div>
-
+    <div class="row weather-forecast" id = "forecast">
+      <div class="col-2">
+        <h3>
+        12pm
+        </h3>
+      <img 
+      src="http://openweathermap.org/img/wn/10d@2x.png"
+      id="icon"
+      alt="Clear">
+      <br>
+         <div id = "temperature">26°</div>
  </div>
- <br>
- <div class = "footnote">
-  <a href = "https://github.com/stacykatharina/FINAL-weather-app">Open-source code</a>
-  by <a href= "https://www.linkedin.com/in/stacykatharina/">Stacy Katharina</a>
-  </div>
 </div>
-
+<div class = "footnote">
+  <a href = "https://github.com/stacykatharina/FINAL-weather-app">Open-source code</a>
+  by <a href= "https://www.linkedin.com/in/stacykatharina/" target="_blank">Stacy Katharina</a>
+  </div>
 <script src="src/index.js"></script>
 </body>
 </html>
