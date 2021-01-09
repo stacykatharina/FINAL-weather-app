@@ -1,24 +1,29 @@
-let now = new Date();
-  console.log(now.getDate());
+function formatDate(timestamp) {
+  let date = new Date(timestamp);
 
-  let li = document.querySelector ("li");
-  let date = now.getDate();
-  let hours = now.getHours ();
-  let minutes = now.getMinutes();
-  let year = now.getFullYear();
-
+  let dateInput = date.getDate();
 
   let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-  let day = days [now.getDay()];
+  let day = days[date.getDay()];
 
-  let months = ["Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sep", "Oct", "Now", "Dec"];
-  let month = months [now.getMonth()];
+  months = ["Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sep", "Oct", "Now", "Dec"];
+  month = months [date.getMonth()];
 
-  li.innerHTML = `${day},  ${date} ${month} ${year}   ${hours}:${minutes} `;
+  let year = date.getFullYear();
 
-  function formatHours(timestamp){
-    let hours = now.getHours ();
-    let minutes = now.getMinutes();
+  return `${day}, ${dateInput} ${month} ${year}, ${formatHours(timestamp)}`;
+}
+  function formatHours(timestamp) {
+    let date = new Date(timestamp);
+    let hours = date.getHours();
+    if (hours < 10) {
+      hours = `0${hours}`;
+    }
+    let minutes = date.getMinutes();
+    if (minutes < 10) {
+      minutes = `0${minutes}`;
+    }
+  
     return `${hours}:${minutes}`;
   }
 
@@ -29,6 +34,7 @@ let now = new Date();
     let descriptionElement = document.querySelector("#description");
     let humidityElement = document.querySelector("#humidity");
     let windElement = document.querySelector("#wind");
+    let dateElement = document.querySelector("#date");
     let iconElement = document.querySelector("#icon");
   
     celsiusTemperature = response.data.main.temp;
@@ -38,6 +44,7 @@ let now = new Date();
     descriptionElement.innerHTML = response.data.weather[0].description;
     humidityElement.innerHTML = response.data.main.humidity;
     windElement.innerHTML = Math.round(response.data.wind.speed);
+    dateElement.innerHTML = formatDate(response.data.dt * 1000);
     iconElement.setAttribute(
       "src",
       `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`)
