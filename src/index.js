@@ -16,6 +16,12 @@ let now = new Date();
 
   li.innerHTML = `${day},  ${date} ${month} ${year}   ${hours}:${minutes} `;
 
+  function formatHours(timestamp){
+    let hours = now.getHours ();
+    let minutes = now.getMinutes();
+    return `${hours}:${minutes}`;
+  }
+
   function showTemperature(response) {
     console.log(response.data);
     let temperatureElement = document.querySelector("#temperature");
@@ -32,7 +38,6 @@ let now = new Date();
     descriptionElement.innerHTML = response.data.weather[0].description;
     humidityElement.innerHTML = response.data.main.humidity;
     windElement.innerHTML = Math.round(response.data.wind.speed);
-    dateElement.innerHTML = formatDate(response.data.dt * 1000);
     iconElement.setAttribute(
       "src",
       `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`)
@@ -73,15 +78,13 @@ function showForecast(response){
   forecastElement.innerHTML = `
   <div class="col-2">
     <h3>
-      12pm
+      ${formatHours(forecast.dt*1000)}
     </h3>
     <img 
-      src="http://openweathermap.org/img/wn/10d@2x.png"
-      id="icon"
-      alt="Clear">
+      src="http://openweathermap.org/img/wn/10d@2x.png"/>
       <br>
-    <div id = "temperature">${Math.round(forecast.main.temp_max)}°</div>
-  </div>`
+    <div id = "weather-forecast-temperature">${Math.round(forecast.main.temp_max)}°</div>
+  </div>`;
 }
 
 function searchCity(city) {
@@ -89,15 +92,15 @@ function searchCity(city) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(showTemperature);
 
-apiUrl =`https//api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${APIkey}`;
+apiUrl =`https//api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${APIkey}&units=metric`;
 axios.get(apiUrl).then(showForecast);
 
 }
 
 function handleSubmit(event) {
   event.preventDefault();
-  let city = document.querySelector("#city-input").value;
-  searchCity(city);
+  let city = document.querySelector("#city-input");
+  searchCity(city.value);
 }
 
 let searchForm = document.querySelector("#search-form");
