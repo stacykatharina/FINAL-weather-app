@@ -158,6 +158,7 @@ function searchCity(city) {
 
   apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(showForecast);
+
 }
 
 function handleSubmit(event) {
@@ -175,6 +176,9 @@ function showPosition (position) {
   let apiKey = "8059f7da306a5b332766ef35cbbe116a";
   let apiURL = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
   axios.get(apiURL).then(showTemperature);
+
+  apiUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(showForecast);
   }
 
 function getCurrentPosition(){
